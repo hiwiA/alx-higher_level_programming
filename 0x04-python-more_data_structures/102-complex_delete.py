@@ -6,5 +6,5 @@ def complex_delete(a_dictionary, value):
             if value == a_dictionary[key]:
                 del a_dictionary[key]
             return (a_dictionary)
-        except KeyError:
+    except KeyError:
             return (a_dictionary)
