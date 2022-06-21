@@ -1,21 +1,33 @@
 #!/usr/bin/python3
+"""
+import math class magic class
+"""
 import math
 
 
 class MagicClass:
-
-    """Class that stores the properties
-    of a circumference"""
+    """
+    class magicclass initialized
+    """
     def __init__(self, radius=0):
-        self.__radius = 0
+        self._MagicClass__radius = 0
         if type(radius) is not int and type(radius) is not float:
-            raise TypeError('radius must be a number')
-        self.__radius = radius
-
-    """ Method that calculates the area of the circumference """
+                raise TypeError("radius must be a number")
+        else:
+            self._MagicClass__radius = radius
+        """
+        initializes
+        """
     def area(self):
-        return ((self.__radius ** 2) * math.pi)
-
-    """ Method that calculates the perimeter of a circumference """
+        return self._MagicClass__radius ** 2 * math.pi
+        """
+        gets area
+        """
     def circumference(self):
-        return (2 * math.pi * self.__radius)
+        return 2 * math.pi * self._MagicClass__radius
+        """
+        gets circumference
+        """
+if __name__ == "__main__":
+    import dis
+    dis.dis(MagicClass)
