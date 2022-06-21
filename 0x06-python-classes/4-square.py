@@ -1,43 +1,35 @@
 #!/usr/bin/python3
-""" Creates an empty class called Square
-"""
-
-
 class Square:
-    """ Empty class with size private attribute
     """
+    creates square object
+    """
+
     def __init__(self, size=0):
-        """
-                Instantiation with size
-        Args:
-            size: size of the square
-        """
-        if type(size) is not int:
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
         self.__size = size
-
-    def area(self):
-        """
-        Returns the area of the square
-        """
-        return (self.__size * self.__size)
-
+    """
+    initializes a square object with size
+    Args:
+        __size(int): size of square private property
+    """
     @property
     def size(self):
-        """
-        size getter. Handle size errors
-        """
         return self.__size
-
+    """
+    gets size of square
+    """
     @size.setter
     def size(self, value):
-        """
-        size setter. Set the size square
-        """
-        if type(value) is not int:
+        if(type(value) is not int):
             raise TypeError("size must be an integer")
-        if value < 0:
+        if(value < 0):
             raise ValueError("size must be >= 0")
-        self.__size = 
+        self.__size = value
+        """
+        sets size of square
+        square must be integer and greater than 0
+        """
+    def area(self):
+        return(self.__size**2)
+        """
+        return area of square based on size
+        """
