@@ -1,15 +1,19 @@
 #!/usr/bin/python3
-"""loads adds saves json to file"""
-import json
-import sys
-save_to_json_file = __import__('7-save_to_json_file').save_to_json_file
-load_from_json_file = __import__('8-load_from_json_file').load_from_json_file
+"""Module for task9."""
+
+
+from sys import argv
+
+save_file = __import__('5-save_to_json_file').save_to_json_file
+load_file = __import__('6-load_from_json_file').load_from_json_file
+
+filename = "add_item.json"
 
 try:
-    jsonList = load_from_json_file("add_item.json")
-except:
-    jsonList = []
+    my_list = load_file(filename)
+except FileNotFoundError:
+    my_list = []
 
-for i in sys.argv[1:]:
-    jsonList.append(i)
-save_to_json_file(jsonList, "add_item.json")
+for n in range(1, len(argv)):
+    my_list.append(argv[n])
+save_file(my_list, filename)
