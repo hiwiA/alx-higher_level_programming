@@ -1,22 +1,18 @@
 #!/usr/bin/python3
-""" Module Student  """
+"""student class"""
 
 
 class Student:
-    """ Student Class """
+    """class stuff"""
     def __init__(self, first_name, last_name, age):
-        """ Init method """
+        """initializes"""
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self, attrs=None):
-        """ return class in JSON"""
-        if attrs is None:
+        """prints __dict__"""
+        if(isinstance(attrs, list) and all(isinstance(x, str) for x in attrs)):
+            return({x: y for x, y in self.__dict__.items() if x in attrs})
+        else:
             return self.__dict__
-
-        name_attrs = {}
-        for key, val in self.__dict__.items():
-            if key in attrs:
-                name_attrs[key] = val
-        return name_attrs
