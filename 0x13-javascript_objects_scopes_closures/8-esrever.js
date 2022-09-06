@@ -1,6 +1,11 @@
 #!/usr/bin/node
 
-const esrever = require('./8-esrever').esrever;
+exports.esrever = function (list) {
+  const revList = [];
 
-console.log(esrever([1, 2, 3, 4, 5]));
-console.log(esrever(["Holberton", 89, { id: 12 }, "String"]));
+  for (let i = list.length - 1; i >= 0; --i) {
+    revList.push(list[i]);
+  }
+
+  return revList;
+};
